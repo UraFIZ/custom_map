@@ -20,15 +20,19 @@ pins.forEach((item) => {
     item.addEventListener("mouseover", function(e) {
         e.preventDefault();
         e.stopPropagation();
-        let x = e.target.offsetLeft + 100;
-        let y = e.clientY - e.target.offsetTop-60;
+        let x = e.clientX  - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop - 50;
+        console.log("clinetX", e.clientX)
+        console.log("clinetY", e.clientY)
+        console.log("offsetLeft", e.target.offsetLeft)
+        console.log("offsetTop", e.target.offsetTop)
         const first = this.querySelector("span .first").innerText;
         const second = this.querySelector("span .second").innerText;
         modal.querySelector(".first-p").innerText = first;
         modal.querySelector(".second-p").innerText = second
         modal.style.display = "block";
         modal.style.top = `${y}px`
-        modal.style.left = `${x}px`
+        modal.style.left = `${e.clientX - 60}px`
 
     })
     item.addEventListener("mouseout", function(e) {
