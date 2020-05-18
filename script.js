@@ -22,10 +22,6 @@ pins.forEach((item) => {
         e.stopPropagation();
         let x = e.clientX  - e.target.offsetLeft;
         let y = e.clientY - e.target.offsetTop - 50;
-        console.log("clinetX", e.clientX)
-        console.log("clinetY", e.clientY)
-        console.log("offsetLeft", e.target.offsetLeft)
-        console.log("offsetTop", e.target.offsetTop)
         const first = this.querySelector("span .first").innerText;
         const second = this.querySelector("span .second").innerText;
         modal.querySelector(".first-p").innerText = first;
