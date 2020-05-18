@@ -1,7 +1,10 @@
 * {
     box-sizing: border-box;
 }
-
+body {
+    padding: 0;
+    margin: 0;
+}
 .container {
     max-width: 1300px;
     background-color: #edf3f6;
@@ -10,6 +13,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+
 }
 .map_container {
     width: 880px;
