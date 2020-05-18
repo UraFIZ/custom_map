@@ -25,77 +25,20 @@ body {
 .map_wrapper {
     width: 880px;
 }
-.map_img {
-    width: 879.704px;
-    top: 0.204px;
-    left: 0.148px;
-    position: absolute;
-    cursor: move;
-}
+
 .pin {
     position: absolute;
     cursor: pointer;
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     width: 50px;
-    height: 72px;
+    height: 76px;
+    z-index: 10;
+    background-image: url(./assest/icon/pin.png);
 }
 
-.pin_mountings {
-    z-index: 100;
-    width: 70px !important;
-    top: 148.808px;
-    left: 534.738px;
-    background: transparent url(./assest/icon/sprite.png) repeat 0px -2923px;
-}
-span.main-pin {
-    position: absolute;
-    display: none;
-    top: -115% !important;
-    left: -86%;
-}
-/* .pin_mountings:hover span.main-pin {
-    display: block;
-} */
-.pin_red--closer {
-    top: 194.398px;
-    left: 536.53px;
-    height: 56px;
-    background: url(./assest/icon/red_pin.png);
-}
-/* .pin_red--closer:hover span {
-    display: block;
-    top: -250%;
-    left: -86%;
-} */
-.pin_elevator {
-    top: 126.778px;
-    left: 531.378px;
-    background-image: url(./assest/icon/pin_elevator.png);
-}
-.pin_bag {
-    top: 87.494px;
-    left: 478.57px;
-    background-image: url(./assest/icon/pin_bag.png);
-}
-/* .pin_bag:hover span {
-    top: -157% !important;
-} */
-.pin_in-jan {
-    top: 124.202px;
-    left: 470.198px;
-    background-image: url(./assest/icon/pin_in-yan.png); 
-}
-.pin_red--farther {
-    top: 129.998px;
-    left: 437.354px;
-    background-image: url(./assest/icon/pin_red.png); 
-}
-.pin_rhomb {
-    top: 122.27px;
-    left: 414.17px;
-    background-image: url(./assest//icon/pin_rhomb.png);
-}
+
+
 .pin span {
     position: absolute;
     display: none;
