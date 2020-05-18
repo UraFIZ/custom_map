@@ -164,3 +164,35 @@ span.main-pin {
     padding: 0;
     margin: 0;
 }
+#mapid { height: 100%; }
+
+.sweetch-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 18px;
+    width: 880px;
+    margin: 0 auto;
+
+}
+.btn {
+    display: block;
+    font-family: gotham_book,arial,sans-serif;
+    color:#1d3243;
+    position: relative;
+    cursor: pointer;
+}
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    display: block;
+    content: "";
+    border: 2px solid #1d3243;
+    bottom: -9px;
+}
+
+
+.hidden {
+    display: none;
+}

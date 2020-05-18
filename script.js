@@ -2,25 +2,25 @@ const plus = document.querySelector("div.tool.plus");
 const minus = document.querySelector("div.tool.minus");
 const refreshbtn = document.querySelector(".refresh")
 const map = document.querySelector(".map_img");
- //pins
- const pins = document.querySelectorAll(".pin");
- const pin_mountings = document.querySelector(".pin_mountings");
- const pin_close = document.querySelector(".pin_red--closer");
- const pin_elevator = document.querySelector(".pin_elevator");
- const pin_bag = document.querySelector(".pin_bag");
- const pin_in = document.querySelector(".pin_in-jan");
- const pin_farther = document.querySelector(".pin_red--farther");
- const pin_rhomb = document.querySelector(".pin_rhomb")
+//pins
+const pins = document.querySelectorAll(".pin");
+const pin_mountings = document.querySelector(".pin_mountings");
+const pin_close = document.querySelector(".pin_red--closer");
+const pin_elevator = document.querySelector(".pin_elevator");
+const pin_bag = document.querySelector(".pin_bag");
+const pin_in = document.querySelector(".pin_in-jan");
+const pin_farther = document.querySelector(".pin_red--farther");
+const pin_rhomb = document.querySelector(".pin_rhomb")
 
- //modal
+//modal
 const modal = document.querySelector(".modal");
 
 
 pins.forEach((item) => {
-    item.addEventListener("mouseover", function(e) {
+    item.addEventListener("mouseover", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        let x = e.clientX  - e.target.offsetLeft;
+        let x = e.clientX - e.target.offsetLeft;
         let y = e.clientY - e.target.offsetTop - 50;
         const first = this.querySelector("span .first").innerText;
         const second = this.querySelector("span .second").innerText;
@@ -31,8 +31,8 @@ pins.forEach((item) => {
         modal.style.left = `${e.clientX - 60}px`
 
     })
-    item.addEventListener("mouseout", function(e) {
-        modal.style.display = "none"; 
+    item.addEventListener("mouseout", function (e) {
+        modal.style.display = "none";
     })
 })
 
@@ -41,7 +41,7 @@ function zoomIn() {
     let step = 273;
     let topStep = -75
     let leftStep = -120;
-    plus.addEventListener("click", function(){
+    plus.addEventListener("click", function () {
         map.style.width = `${map.clientWidth + step}px`
         map.style.top = `${map.offsetTop + topStep}px`
         map.style.left = `${map.offsetLeft + leftStep}px`
@@ -55,8 +55,8 @@ function zoomOut() {
     let step = 273;
     let topStep = 75;
     let leftStep = 120;
-    minus.addEventListener("click", function() {
-        if(map.clientWidth > 881) {
+    minus.addEventListener("click", function () {
+        if (map.clientWidth > 881) {
             map.style.width = `${map.clientWidth - step}px`
             map.style.top = `${map.offsetTop + topStep}px`
             map.style.left = `${map.offsetLeft + leftStep}px`
@@ -67,7 +67,7 @@ function zoomOut() {
 zoomOut()
 
 function refresh() {
-    refreshbtn.addEventListener("click", function() {
+    refreshbtn.addEventListener("click", function () {
         map.style.width = "880px";
         map.style.top = "0px";
         map.style.left = "0px";
@@ -77,7 +77,7 @@ function refresh() {
 refresh()
 
 function changePinsPosition(arg) {
-    if(arg == "zoomIn") {
+    if (arg == "zoomIn") {
         pin_mountings.style.top = `${pin_mountings.offsetTop - 9}px`
         pin_mountings.style.left = `${pin_mountings.offsetLeft + 51}px`
 
@@ -93,12 +93,12 @@ function changePinsPosition(arg) {
         pin_in.style.top = `${pin_in.offsetTop - 18}px`
         pin_in.style.left = `${pin_in.offsetLeft + 33}px`
 
-        pin_farther.style.top = `${pin_farther.offsetTop -17}px`
+        pin_farther.style.top = `${pin_farther.offsetTop - 17}px`
         pin_farther.style.left = `${pin_farther.offsetLeft + 22}px`
 
         pin_rhomb.style.top = `${pin_rhomb.offsetTop - 19}px`
         pin_rhomb.style.left = `${pin_rhomb.offsetLeft + 15}px`
-    }else if (arg == "zoomOut"){
+    } else if (arg == "zoomOut") {
         pin_mountings.style.top = `${pin_mountings.offsetTop + 9}px`
         pin_mountings.style.left = `${pin_mountings.offsetLeft - 51}px`
 
@@ -114,9 +114,9 @@ function changePinsPosition(arg) {
         pin_in.style.top = `${pin_in.offsetTop + 18}px`
         pin_in.style.left = `${pin_in.offsetLeft - 33}px`
 
-        pin_farther.style.top = `${pin_farther.offsetTop +17}px`
+        pin_farther.style.top = `${pin_farther.offsetTop + 17}px`
         pin_farther.style.left = `${pin_farther.offsetLeft - 22}px`
-        
+
         pin_rhomb.style.top = `${pin_rhomb.offsetTop + 19}px`
         pin_rhomb.style.left = `${pin_rhomb.offsetLeft - 15}px`
     } else {
