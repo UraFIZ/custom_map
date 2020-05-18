@@ -25,7 +25,13 @@ body {
 .map_wrapper {
     width: 880px;
 }
-
+.map_img {
+    width: 879.704px;
+    top: 0.204px;
+    left: 0.148px;
+    position: absolute;
+    cursor: move;
+}
 .pin {
     position: absolute;
     cursor: pointer;
@@ -91,6 +97,7 @@ body {
     border-radius: 10px;
     position: absolute;
     width: 160px;
+    z-index: 50;
 }
 .modal::before {
     content: "";

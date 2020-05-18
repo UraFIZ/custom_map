@@ -3,31 +3,34 @@ const minus = document.querySelector("div.tool.minus");
 const refreshbtn = document.querySelector(".refresh")
 const map = document.querySelector(".map_img");
 const printContainer = document.querySelector('.pin-container');
-
+const pins = document.querySelectorAll(".pin");
 let ratio = 0.322;
 //modal
 const modal = document.querySelector(".modal");
 
 
-// pins.forEach((item) => {
-//     item.addEventListener("mouseover", function (e) {
-//         e.preventDefault();
-//         e.stopPropagation();
-//         let x = e.clientX - e.target.offsetLeft;
-//         let y = e.clientY - e.target.offsetTop - 50;
-//         const first = this.querySelector("span .first").innerText;
-//         const second = this.querySelector("span .second").innerText;
-//         modal.querySelector(".first-p").innerText = first;
-//         modal.querySelector(".second-p").innerText = second
-//         modal.style.display = "block";
-//         modal.style.top = `${y}px`
-//         modal.style.left = `${e.clientX - 60}px`
+function setPopup (data) {
+    data.forEach((item) => {
+        item.addEventListener("mouseover", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+            const first = this.querySelector("span .first").innerText;
+            const second = this.querySelector("span .second").innerText;
+            modal.querySelector(".first-p").innerText = first;
+            modal.querySelector(".second-p").innerText = second
+            modal.style.display = "block";
+            modal.style.top = `${y}px`
+            modal.style.left = `${e.clientX - 60}px`
+    
+        })
+        item.addEventListener("mouseout", function (e) {
+            modal.style.display = "none";
+        })
+    })
+}
 
-//     })
-//     item.addEventListener("mouseout", function (e) {
-//         modal.style.display = "none";
-//     })
-// })
 
 
 function zoomIn() {
@@ -98,10 +101,10 @@ $( function() {
 
         $(pinDiv).attr("native-left", data.coordinateX);
         $(pinDiv).attr("native-top", data.coordinateY);
-        pinDiv.innrHtml = `
+        pinDiv.innerHTML = `
         <span>
-            <p>${data.title}</p> <br/>
-            <p>${data.description}</p>
+            <p class="first">${data.title}</p> <br/>
+            <p class="second">${data.description}</p>
         </span>
         `   
         var ratio = 880 / 2732;
@@ -111,6 +114,8 @@ $( function() {
             'top': (newTop) + 'px',
             'left': (newLeft) + 'px'
         })
+        const pins = document.querySelectorAll(".pin");
+        setPopup(pins)
         printContainer.append(pinDiv)
 
   }
@@ -119,7 +124,6 @@ $( function() {
 
   function setOriginalResidenceMarker(refX, refY, ratio, refresh) {
     ratio =  +ratio.toFixed(3)
-    console.log(ratio)
     var x = parseInt(refX);
     var y = parseInt(refY);
     var deltaWidth = 0;
